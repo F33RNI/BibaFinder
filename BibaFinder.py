@@ -27,6 +27,9 @@ import mechanize
 # URL to get prepod rasp
 GET_API = "https://kaf.dmami.ru/lessons/teacher-html?id="
 
+# Timeout in seconds to open url
+TIMEOUT = 5.0
+
 # Encoding of HTML page
 HTML_ENCODING = "utf-8"
 
@@ -37,10 +40,10 @@ PREPODS_CSV_FILE = "prepods.csv"
 SEPARATOR = ","
 
 # Number of group
-GROUP = "224-311"
+GROUPS = ["123-456", "123-457", "123-458"]
 
 # List for results
-results = []
+results = [[] for i in range(len(GROUPS))]
 
 # Open file
 prepods_list = open(PREPODS_CSV_FILE, "r", encoding="utf8").readlines()
@@ -81,29 +84,41 @@ for prepod in prepods_list:
                 url = GET_API + str(prepod_id)
 
                 # Search prepod
-                browser.open(url)
+                browser.open(url, timeout=TIMEOUT)
                 response = browser.response()
                 html = response.read()
                 html_decoded = html.decode(HTML_ENCODING)
 
-                # if group found
-                if GROUP in html_decoded:
-                    # Append result
-                    results.append([str(prepod_id), prepod_name, url])
+                for i in range(len(GROUPS)):
+                    # Get group
+                    group = GROUPS[i]
 
-                    # Print prepod name and url
-                    print(">", prepod_name, "found! URL:", url)
+                    # If group found
+                    if group in html_decoded:
+                        # Append result
+                        results[i].append([str(prepod_id), prepod_name, url])
+
+                        # Print prepod name and url
+                        print(group, prepod_name, "found! URL:", url)
 
     # Print error message
     except Exception:
         traceback.print_exc()
 
-# Write result to the file
+# Write result to the files
 if len(results) > 0:
-    print("Writing to file...")
-    with open(GROUP + ".csv", "w", encoding="utf-8") as result_file:
-        for result in results:
-            line = SEPARATOR.join(result) + "\n"
-            result_file.write(line)
-    result_file.close()
+    print(results)
+    print("Writing to files...")
+
+    for i in range(len(GROUPS)):
+        if len(results[i]) > 0:
+            # Get group
+            group = GROUPS[i]
+
+            # Write group to file
+            with open(group + ".csv", "w", encoding="utf-8") as result_file:
+                for result in results[i]:
+                    line = SEPARATOR.join(result) + "\n"
+                    result_file.write(line)
+            result_file.close()
 print("Done")
