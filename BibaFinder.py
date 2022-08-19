@@ -47,7 +47,7 @@ GROUPS = ["123-456", "123-457", "123-458"]
 results = [[] for i in range(len(GROUPS))]
 
 # Open file
-prepods_list = open(PREPODS_CSV_FILE, "r", encoding="utf8").readlines()
+prepods_list = open(PREPODS_CSV_FILE, "r", encoding=HTML_ENCODING).readlines()
 
 # Initialize browser
 browser = mechanize.Browser()
@@ -117,7 +117,7 @@ if len(results) > 0:
             group = GROUPS[i]
 
             # Write group to file
-            with open(group + ".csv", "w", encoding="utf-8") as result_file:
+            with open(group + ".csv", "w", encoding=HTML_ENCODING) as result_file:
                 for result in results[i]:
                     line = SEPARATOR.join(result) + "\n"
                     result_file.write(line)
