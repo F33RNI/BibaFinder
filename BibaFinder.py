@@ -79,7 +79,8 @@ for prepod in prepods_list:
 
                 # Calculate and print progress
                 progress = int((counter / len(prepods_list)) * 100)
-                print("Searching", prepod_name, "(" + str(progress) + "%)")
+                print("Searching", prepod_name, "\t", str(counter) + "/" + str(len(prepods_list)),
+                      "(" + str(progress) + "%)")
 
                 # Create url
                 url = GET_API + str(prepod_id)
