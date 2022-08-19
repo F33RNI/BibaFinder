@@ -93,7 +93,7 @@ for prepod in prepods_list:
 
                     # Print prepod name and url
                     print(">", prepod_name, "found! URL:", url)
-                    
+
     # Print error message
     except Exception:
         traceback.print_exc()
@@ -101,7 +101,7 @@ for prepod in prepods_list:
 # Write result to the file
 if len(results) > 0:
     print("Writing to file...")
-    with open(GROUP + ".csv", "w") as result_file:
+    with open(GROUP + ".csv", "w", encoding="utf-8") as result_file:
         for result in results:
             line = SEPARATOR.join(result) + "\n"
             result_file.write(line)
