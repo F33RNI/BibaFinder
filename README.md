@@ -22,7 +22,7 @@
     ```
     5. Save file as `prepods.csv`
 
-2. Type your groups number into `GROUPS =`
+2. Open `BibaFinder.py` and type your groups number into `GROUPS =`
     1. Example: `GROUPS = ["123-456"]` or `GROUPS = ["123-456", "789-012"]`
 
 3. Run `BibaFinder.py` `$ python3 BibaFinder.py`
@@ -32,8 +32,8 @@
 5. Open `Timetable.py` and type generated csv file into `BIBA_FILE =`
     1. Example: `BIBA_FILE = "123-456.csv"`
 
-6. Type your group number into `GROUPS =`
-    1. Exmaple: `GROUPS = "123-456"`
+6. Type your group number into `GROUP =`
+    1. Exmaple: `GROUP = "123-456"`
 
 7. Run `Timetable.py` `$ python3 Timetable.py`
 
