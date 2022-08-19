@@ -1,2 +1,2 @@
 # BibaFinder
-Script to search for all prepods and their schedules by group number
+Script to retrieve timetable by group number and prepods list from Moscow Polykek
