@@ -114,7 +114,7 @@ for prepod in prepods:
                             content = lesson_date + ": " + auditory + ": " + lesson_subject
 
                             # Add subject to timetable
-                            timetable[day_time][data_day] += content + '\n'
+                            timetable[day_time][data_day] += content + '\n\n'
 
                             # Print debug info
                             print("data_day:", data_day, "day_time:", day_time, "subject:", content)
