@@ -20,6 +20,7 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 For more information, please refer to <https://unlicense.org>
 """
+
 import traceback
 
 import mechanize
@@ -30,8 +31,8 @@ GET_API = "https://kaf.dmami.ru/lessons/teacher-html?id="
 # Timeout in seconds to open url
 TIMEOUT = 5.0
 
-# Encoding of HTML page
-HTML_ENCODING = "utf-8"
+# Encoding of HTML page and xlsx file
+HTML_ENCODING = "utf-8-sig"
 
 # File containing prepod ids and names
 PREPODS_CSV_FILE = "prepods.csv"
