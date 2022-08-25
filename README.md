@@ -11,6 +11,15 @@
 
 ## How to use?
 
+1. Install all packages
+    ```
+    pip install mechanize
+    pip install lxml
+    pip install pandas
+    pip install openpyxl
+    pip install xlsxwriter
+    ```
+
 1. Get list of prepods from https://e.mospolytech.ru/old/index.php?p=rasp
     1. Open developer option (page source)
     2. Search for `<select data-placeholder="Выберите преподавателя" class="chosen-select" tabindex="-1" id="pps_select" style="width: 70%; display: none;">` element
