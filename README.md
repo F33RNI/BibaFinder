@@ -20,7 +20,7 @@
     pip install xlsxwriter
     ```
 
-1. Get list of prepods from https://e.mospolytech.ru/old/index.php?p=rasp
+2. Get list of prepods from https://e.mospolytech.ru/old/index.php?p=rasp
     1. Open developer option (page source)
     2. Search for `<select data-placeholder="Выберите преподавателя" class="chosen-select" tabindex="-1" id="pps_select" style="width: 70%; display: none;">` element
     3. Copy all data under `<option value="0">Выберите преподавателя из списка</option>`
@@ -31,21 +31,21 @@
     ```
     5. Save file as `prepods.csv`
 
-2. Open `BibaFinder.py` and type your groups number into `GROUPS =`
+3. Open `BibaFinder.py` and type your groups number into `GROUPS =`
     1. Example: `GROUPS = ["123-456"]` or `GROUPS = ["123-456", "789-012"]`
 
-3. Run `BibaFinder.py` `$ python3 BibaFinder.py`
+4. Run `BibaFinder.py` `$ python3 BibaFinder.py`
 
-4. Wait for completion
+5. Wait for completion
 
-5. Open `Timetable.py` and type generated csv file into `BIBA_FILE =`
+6. Open `Timetable.py` and type generated csv file into `BIBA_FILE =`
     1. Example: `BIBA_FILE = "123-456.csv"`
 
-6. Type your group number into `GROUP =`
+7. Type your group number into `GROUP =`
     1. Exmaple: `GROUP = "123-456"`
 
-7. Run `Timetable.py` `$ python3 Timetable.py`
+8. Run `Timetable.py` `$ python3 Timetable.py`
 
-8. Wait for completion
+9. Wait for completion
 
-9. Timetable will be written to the GROUPS_timetable.xlsx file
+10. Timetable will be written to the GROUPS_timetable.xlsx file
