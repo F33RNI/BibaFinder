@@ -129,7 +129,7 @@ for row_index in range(len(ROWS_IN_DAY) + 1):
 
 
 # Write to file
-writer = pandas.ExcelWriter(GROUP + "_timetable.xlsx")
+writer = pandas.ExcelWriter(GROUP + "_timetable.xlsx", engine='xlsxwriter')
 data.to_excel(writer, sheet_name=GROUP, index=False)
 
 # Create formatter for subjects
